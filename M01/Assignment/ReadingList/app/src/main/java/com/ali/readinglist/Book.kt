@@ -7,6 +7,10 @@ class Book{
     var hasBeenRead:Boolean=false
     var id:String?=null
 
+    companion object {
+        const val INVALID_ID = -1
+    }
+
     constructor(title:String?,reasonToRead:String?,hasBeenRead:Boolean,id:String?){
         this.title=title
         this.reasonToRead=reasonToRead
@@ -21,7 +25,7 @@ class Book{
         this.id=values[3]
     }
     fun toCsvString():String{
-        return "$title,$reasonToRead$hasBeenRead$id"
+        return "$title,$reasonToRead,$hasBeenRead,$id"
     }
 }
 
