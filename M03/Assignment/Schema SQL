@@ -2,29 +2,31 @@ CREATE TABLE players(
   id INTEGER PRIMARY KEY,
   first_name TEXT,
   last_name TEXT,
-  age INTEGER
+  age INTEGER,
+  team_id INTEGER,
+  FOREIGN KEY(team_id) REFERENCES teams(team_id)
   );
   
-  INSERT INTO players (id, first_name, last_name, age)
-  VALUES (1, "Ali", "Haider", 24);
-  INSERT INTO players (id, first_name, last_name, age)
-  VALUES (2, "Brandon", "Lively", 27);
-  INSERT INTO players (id, first_name, last_name, age)
-  VALUES (3, "Vivek", "Vishnaweth", 22);
-  INSERT INTO players (id, first_name, last_name, age)
-  VALUES (4, "Chance", "Payne", 28);
+  INSERT INTO players (id, first_name, last_name, age,team_id)
+  VALUES (1, "Ali", "Haider", 24, 4);
+  INSERT INTO players (id, first_name, last_name, age,team_id)
+  VALUES (2, "Brandon", "Lively", 27, 3);
+  INSERT INTO players (id, first_name, last_name, age,team_id)
+  VALUES (3, "Vivek", "Vishnaweth", 22, 1);
+  INSERT INTO players (id, first_name, last_name, age,team_id)
+  VALUES (4, "Chance", "Payne", 28,2);
   
   CREATE TABLE teams(
-  id INTEGER PRIMARY KEY,
+  team_id INTEGER PRIMARY KEY,
   name TEXT,
   trainer TEXT
   );
   
-  INSERT INTO teams(id,name,trainer)
+  INSERT INTO teams(team_id,name,trainer)
   VALUES (1,"NewYork Eagles","Brian");
-  INSERT INTO teams(id,name,trainer)
+  INSERT INTO teams(team_id,name,trainer)
   VALUES (2,"Dallas Parrots","Taylor");
-  INSERT INTO teams(id,name,trainer)
+  INSERT INTO teams(team_id,name,trainer)
   VALUES (3,"LosAngeles Lions","Brett");
-  INSERT INTO teams(id,name,trainer)
+  INSERT INTO teams(team_id,name,trainer)
   VALUES (4,"Ohio Elephants","Michael");
