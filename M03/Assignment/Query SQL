@@ -1,0 +1,11 @@
+SELECT * FROM players
+SELECT age FROM players
+SELECT age FROM players WHERE id IS 2
+SELECT age FROM players WHERE id BETWEEN 2 AND 4
+UPDATE players SET age=30 WHERE first_name LIKE "%chance%";
+SELECT age FROM players WHERE first_name Like "chance";
+UPDATE teams SET trainer="Jackson" WHERE trainer LIKE "%Michael%";
+SELECT trainer FROM teams WHERE trainer Like "Jackson";
+DELETE FROM teams WHERE name LIKE "%newyork eagles%";
+SELECT * FROM teams;
+SELECT players.first_name,teams.trainer FROM players INNER JOIN teams USING(team_id);
