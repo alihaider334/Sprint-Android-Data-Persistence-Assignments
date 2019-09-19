@@ -8,4 +8,5 @@ UPDATE teams SET trainer="Jackson" WHERE trainer LIKE "%Michael%";
 SELECT trainer FROM teams WHERE trainer Like "Jackson";
 DELETE FROM teams WHERE name LIKE "%newyork eagles%";
 SELECT * FROM teams;
+
 SELECT players.first_name,teams.trainer FROM players INNER JOIN teams USING(team_id);
